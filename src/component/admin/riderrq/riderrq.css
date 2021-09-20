@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+.modala{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: white;
+    width: 500px;
+    max-width: 60%;
+    max-height: 95%;
+    overflow: scroll;
+}
+
+.modala.active{
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modala-header{
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background: rgba(0, 0, 0, .2);
+}
+.modala-header .title{
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.modala-header .close-button{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    font-size: 1.25rem;
+    background: none;
+}
+
+.modala-body{
+    padding: 10px 15px;
+    text-align: left;
+}
+
+#overlay{
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .5);
+    pointer-events: none;
+}
+
+#overlay.active{
+    opacity: 1;
+    pointer-events: all;
+}
+
+form{
+    margin-top: 20px;
+    text-align: left;
+}
+input{
+   text-align: left;
+}
+
+.errorInpit{
+    border: 1px solid red;
+}
+
+.ei-error{
+    color: red;
+    text-align: left;
+    margin: 0;
+    padding-left: 15px;
+
+}
+
+.error-input{
+    background: none;
+    border: 1px solid red;
+}
+
+.modala-body span{
+    color: gray;
+    padding: 10px;
+}
+
+@media (max-width: 420px) {
+    .modala{
+        max-width: 80%;
+    }
+}

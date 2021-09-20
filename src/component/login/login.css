@@ -1,0 +1,39 @@
+.login-main{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 70%;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    border-radius: 10px;
+    
+}
+.loginImg{
+    width: 100%;
+    height: 100%;
+    background: #292740;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.login-main form{
+    padding: 30px;
+}
+.login-main h3{
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.loginImg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-main a{
+    text-decoration: none;
+    transition: .5s ease;
+}
+.login-main a:hover{
+    text-decoration: underline;
+}

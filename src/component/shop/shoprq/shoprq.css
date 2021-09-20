@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.background{
+    background-image: url('https://thumbs.dreamstime.com/b/food-background-breakfast-yogurt-granola-muesli-strawberries-banner-image-website-gray-concrete-table-top-view-214357125.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: auto;
+    width: auto;
+}
+.overly{
+    height: auto;
+    width: 100%;
+    background: rgba(0, 0, 0, .7);
+}
+.shoprqWrapper{
+    position: relative;
+    height: auto;
+    width: auto;
+    padding-top: 110px;
+    color: white;
+}
+.shoprqWrapper h1, h4{
+    text-align: justify;
+}
+.shoprqWrapper h4{
+    font-size: 1.37rem;
+}
+.shoprqWrapper h1{
+    margin-top: 60px;
+    color: #e6a8ac;
+}
+
+.shoprq-form{
+    width: 100%;
+    height: auto;
+    background: white;
+    color: black;
+    text-align: left;
+    padding: 40px;
+}
+.shoprq-form h5{
+    text-align: center;
+}
+.shoprq-form p{
+    font-size: 12px;
+    color: gray;
+}
+
+.shoprq-form form label{
+    position: absolute;
+    top: -40%;
+    left: 3%;
+    background: white;
+    font-size: 12px;
+    padding: 2px;
+}
+
+::placeholder {
+    color: gray;
+    font-size: 13px;
+}
+.sub{
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background: #ec4653;
+    color: white;
+    border: none;
+    transition: .5s ease;
+}
+
+.sub:hover{
+    background: #d1323f;
+}
+
+.shopRqWord{
+    margin-bottom: 50px;
+}
+.shopRqWord h3{
+    text-align: center;
+    margin-block: 50px;
+}
+
+.shopRqWord p{
+    color: #656565;
+    font-size: 15px;
+    padding: 25px;
+}
+.shopRqWord i{
+    color:#3b3b3b;
+    padding: 30px;
+}
+
+.shopRqWord a {
+    margin: auto;
+    margin-top: 50px;
+    width: 30%;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    background: #ec4653;
+    color: white;
+    border: none;
+    transition: .5s ease;
+}
+
+.shopRqWord a:hover{
+    background: #d1323f;
+}
+
+.ei-error{
+    border: 1px solid red;
+}
+
+
+@media screen and (max-width: 560px) {
+    
+  }

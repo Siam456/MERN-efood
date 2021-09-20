@@ -1,0 +1,104 @@
+.riderrqWrapper{
+    margin-top: 6%;
+}
+.riderimgWrapper1{
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    border-radius: 10px;
+    width: 70%;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.riderimgWrapper1 img{
+    width: 100%;
+}
+.riderimgWrapper1::before{
+    content:"Join with us...";
+    font-weight: bold;
+    font-size: 150%;
+    color: rgba(236, 70, 83, 0.8);
+    display: block;
+    position: absolute;
+    padding: 15px;
+}
+
+.riderimgWrapper2{
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    border-radius: 10px;
+    width: 70%;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.riderimgWrapper2 img{
+    width: 100%;
+}
+.riderimgWrapper2::before{
+    content:"Join with us...";
+    font-weight: bold;
+    font-size: 150%;
+    color: rgba(236, 70, 83, 0.8);
+    display: block;
+    position: absolute;
+    padding: 15px;
+}
+
+.formWrapperRider{
+    position: relative;
+    padding: 0 50px;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    background-color: rgba(255, 255, 255, .7);
+    border-radius: 10px;
+
+}
+
+.formWrapperRider::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    inset: 0;
+    background: linear-gradient(to right, #ff3333, #ffcc66);
+    z-index: -1;
+    filter: blur(30px);
+    transform: scale(.90);
+}
+
+.det{
+    text-align: center;
+    width: 70%;
+    margin: auto;
+}
+
+.applyDetails{
+    background: #F06B75;
+    padding: 60px 90px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+
+.subRider{
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background: #ec4653;
+    color: white;
+    border: none;
+    transition: .5s ease;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 17px;
+}
+.subRider:hover{
+    background: #d1323f;
+}
+
+@media screen and (max-width: 560px) {
+    .riderimgWrapper1{
+        display: none;
+    }
+    .det{
+        margin-top: 50px;
+    }
+  }

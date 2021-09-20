@@ -1,0 +1,26 @@
+
+.productDescription{
+    color: gray;
+    height: 150px;
+    max-height: 100vh;
+    width: auto;
+    word-wrap: break-word;
+    margin-top: 15px;
+}
+
+@media screen and (max-width: 1000px) {
+    .productDescription{
+        color: gray;
+        height: 200px;
+        max-height: 100vh;
+        word-wrap: break-word;
+    }
+  }
+
+@media screen and (max-width: 480px) {
+    .productDescription{
+        color: gray;
+        height: 100px;
+        max-height: 100vh;
+    }
+  }

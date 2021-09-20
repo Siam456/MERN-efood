@@ -1,0 +1,36 @@
+.registerWrapper{
+    display: flex;
+    align-items: center;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    border-radius: 10px;
+    width: 70%;
+    text-align: center;
+}
+
+.registerWrapper .formWrapper{
+    padding: 10px;
+}
+
+.link{
+    float: right;
+    margin-bottom: 30px;
+    text-decoration: none;
+    transition: .5s ease;
+}
+.link:hover{
+    text-decoration: underline;
+}
+
+
+.ei-error{
+    border: 1px solid red;
+}
+
+@media only screen and (max-width: 600px) {
+    .registerWrapper{ 
+        width: 100%;
+    }
+  }
