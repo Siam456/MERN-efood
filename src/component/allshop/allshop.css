@@ -1,0 +1,12 @@
+.cardWrapperAll{
+    cursor: pointer;
+    text-decoration: none;
+}
+.cardWrapperAll .card{
+    padding: .5%;
+    transition: .2s ease;
+}
+
+.cardWrapperAll .card:hover{
+    padding: 0;
+}

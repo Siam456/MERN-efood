@@ -14,7 +14,7 @@ const OrderItem = () => {
             .then(res => {
                 //if(unmount){
                     setcartx(res.data.shoppingItem);
-                    console.log(res.data.shoppingItem)
+                    //console.log(res.data.shoppingItem)
 
                     
                 //}
@@ -36,7 +36,7 @@ const OrderItem = () => {
     }
 
     const changeStatus = (id) => {
-        alert(id)
+        //alert(id)
         let body = {
             status: "pickup"
         }
@@ -44,6 +44,7 @@ const OrderItem = () => {
         axios.put(`/shoppingitem/${id}`, body)
         .then(res => {
             if(res){
+                alert('ok done')
                 window.location.reload();
             }
         })

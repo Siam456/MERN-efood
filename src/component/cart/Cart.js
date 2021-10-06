@@ -9,20 +9,21 @@ const Cart = () => {
 
     const [quantity, setquantity] = useState(1);
 
-    useEffect(() => {
-        axios.get('/cart')
+    useEffect(async () => {
+        const unmount = true;
+        const res = await axios.get('/cart')
             .then(res => {
-                //if(unmount){
+                if(unmount){
                     setcartx(res.data.cart);
-                    console.log(res.data.cart)
+                    //console.log(res.data.cart)
 
                     
-                //}
+                }
             })
             .catch(err => console.log(err))
         
         return () => {
-            
+            unmount = false;
         }
     }, [])
 
@@ -131,9 +132,9 @@ const Cart = () => {
                  
                 }
                 return(
-                    <>
+                    <div key={index}>
                         {trackingOrder}
-                    </>)
+                    </div>)
                 
             })}
             

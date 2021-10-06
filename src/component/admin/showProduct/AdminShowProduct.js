@@ -20,13 +20,16 @@ const AdminShowProduct = () => {
         return(() => {
             unmount = false
         })
-    })
+    }, [])
 
     //delete product
 
 	const delProduct = (id) => {
 		axios.delete(`/product/${id}`)
-		.then(res => console.log(res))
+		.then(res => {
+            alert('delete successfully');
+            window.location.reload();
+        })
 		.catch(err => console.log(err))
 	}
 
@@ -35,7 +38,10 @@ const AdminShowProduct = () => {
         alert('Ok Done')
 
         axios.patch(`/product/f/f/${id}`)
-		.then(res => console.log(res))
+		.then(res => {
+            alert('Successfully done');
+            window.location.reload();
+        })
 		.catch(err => console.log(err))
     }
 
@@ -100,47 +106,9 @@ const AdminShowProduct = () => {
                                                     
 
                                                     {/* <!-- Modal --> */}
-                                                    <div className="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                                                    <div className="modal-dialog" role="document">
-                                                        <div className="modal-content">
-                                                        <div className="modal-header">
-                                                            <h5 className="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                                                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                            </button>
-                                                        </div>
-                                                        <div className="modal-body">
-                                                            ...
-                                                            <div>
-                                                                <center>
-                                                                    {productImg}
-                                                                </center>
-                                                                <div>
-                                                                    <span style={{ fontWeight: "bold" }}>{p.title}</span>
-                                                                    <br />
-                                                                    <span >{p.description}</span>
-                                                                    <br />
-                                                                    <span>tk {p.price}</span>
-                                                                    <br />
-                                                                </div>
-                                                            </div>
 
-                                                        </div>
-                                                        <div className="modal-footer">
-
-                                                        <button className="card-b">
-                                                                <i onClick={() => fetureProduct(p._id)} className="fas fa-star-half-alt"></i>
-                                                        </button>
-                                                        <button className="card-b" style={{marginLeft: '15px'}}>
-                                                            <i  onClick={() => delProduct(p._id)} className="far fa-trash-alt"></i>
-                                                        </button>
-
-                                                            <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                            <button type="button" className="btn btn-primary">Save changes</button>
-                                                        </div>
-                                                        </div>
-                                                    </div>
-                                                    </div>
+                                                    
+                                                    
                                                     </div>
                                                 </div>
                                             )

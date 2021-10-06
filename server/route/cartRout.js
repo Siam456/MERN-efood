@@ -16,7 +16,7 @@ const {
 
 route.get('/', checkLogin, getCart);
 route.post('/:selerId/:productId', checkLogin, postCart);
-route.put('/:id',checkLogin, editCart);
+route.put('/:id/:shopid',checkLogin, editCart);
 
 
 route.delete('/:id',checkLogin, deleteCart);

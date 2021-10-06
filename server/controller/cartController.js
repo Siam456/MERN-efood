@@ -4,6 +4,7 @@ const path = require('path');
 //import model
 //const people = require('../model/userModel');
 const cartModel = require('../model/cartModel');
+const productModel = require('../model/productModel')
 
 
 const getCart = async (req, res) => {
@@ -77,47 +78,87 @@ const postCart = async (req, res) => {
 }
 
 const editCart = async (req, res) => {
-    // try{
-    //     if(req.file){
-    //         const response = await people.findByIdAndUpdate({_id: req.params.id},
-    //             {
-    //                 $set: {
-    //                     name: req.body.name,
-    //                     email: req.body.email,
-    //                     phone: req.body.phone,
-    //                     avater: req.file.filename,
-    //                     role: req.body.role,
-    //                 }
-    //             });
-    //             const delPath = path.join(__dirname, '..' , '..' , `public/userUpload/${response.avater}`)
-    //             fs.unlinkSync(delPath);
-    //             res.json({
-    //                 user: response,
-    //                 msg: 'user Update successfully',
-    //             })
+    
+    try{
+        //console.log(req.body.status)
+        
+        const users = await cartModel.find({
+            $and: [
+                {'user.id': req.user._id},
+                {'products': req.params.id}
+            ]
+        }).populate('products')
 
+        let response;
 
-    //     } else{
-    //         const response = await people.findByIdAndUpdate({_id: req.params.id},
-    //             {
-    //                 $set: {
-    //                     name: req.body.name,
-    //                     email: req.body.email,
-    //                     phone: req.body.phone,
-    //                     role: req.body.role,
-    //                 }
-    //             });
-    //             res.json({
-    //                 user: response,
-    //                 msg: 'user Update successfully',
-    //             })
+        if(req.body.status === 'add'){
+            if(users.length > 0){
+                const subtotalPrice = users[0].totalPrice;
+                const price = users[0].products.price;
 
-    //     }
-            
+                const total = subtotalPrice+price;
+                //const totalMinus = subtotalPrice-price;
 
-    // } catch(err){
-    //     console.log(err.message)
-    // }
+                //console.log(users[0].quantity)
+                const quan = users[0].quantity;
+                const quanAdd = quan + 1;
+                //const quanRemove = quan - 1;
+                response = await cartModel.findByIdAndUpdate({_id: users[0]._id}, 
+                    {$set: {'totalPrice': total, quantity: quanAdd}})
+    
+                
+            } else{
+                
+                const product = await productModel.find({_id: req.params.id})
+                
+                const cart = new cartModel({
+                    selerId: product[0].sellerA.id,
+                    products: req.params.id,
+                    user: {
+                        id: req.user._id,
+                        name: req.user.name,
+                        email: req.user.email,
+                        phone: req.user.phone,
+                        address: req.user.address,
+                        
+                    },
+                    totalPrice: product[0].price,
+                    quantity: 1,
+                });
+
+                response = await cart.save();
+                
+            }
+        } else if(req.body.status === 'remove'){
+            if(users.length > 0){
+                const subtotalPrice = users[0].totalPrice;
+                const price = users[0].products.price;
+
+                //const total = subtotalPrice+price;
+                const totalMinus = subtotalPrice-price;
+
+                //console.log(users[0].quantity)
+                const quan = users[0].quantity;
+                //const quanAdd = quan + 1;
+                const quanRemove = quan - 1;
+                response = await cartModel.findByIdAndUpdate({_id: users[0]._id}, 
+                    {$set: {'totalPrice': totalMinus, quantity: quanRemove}})
+    
+                
+            }
+        }
+
+        res.json({
+            response
+        })
+         
+        
+    } catch(err){
+        console.log(err.message)
+        res.status(500).json({
+            err: err.message,
+        })
+    }
 }
 
 

@@ -47,7 +47,10 @@ const ShopRq = () => {
         
         
         axios.post('/user/rq', data)
-        .then(res => alert('siam'))
+        .then(res => {
+            alert('added successfully');
+            window.location.reload();
+        })
         .catch(err => console.log(err.message))
     }
 
@@ -55,8 +58,9 @@ const ShopRq = () => {
     const cancelRq = (id) => {
         axios.delete(`/shoprq/${id}`)
         .then(res => {
-            alert('delete successfullu');
+            alert('delete successfully');
             closeModal();
+            window.location.reload();
         })
         .catch(err => console.log(err))
     }

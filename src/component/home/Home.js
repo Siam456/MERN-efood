@@ -126,7 +126,7 @@ const Home = () => {
                     
                 </div>
                 <div style={{width: '100%', textAlign: 'center', marginBottom: '50px', marginTop: '50px'}}>
-                    <a href='http://localhost:3000/products' className='subn'>Show More</a>
+                    <a href='http://localhost:3000/populorProduct' className='subn'>Show More</a>
                 </div>
             </div>
 
@@ -186,7 +186,7 @@ const Home = () => {
                     
                 </div>
                 <div style={{width: '100%', textAlign: 'center', marginBottom: '50px', marginTop: '50px'}}>
-                    <a href='http://localhost:3000/products' className='subn'>Show More</a>
+                    <a href='http://localhost:3000/featureProduct' className='subn'>Show More</a>
                 </div>
             </div>
 

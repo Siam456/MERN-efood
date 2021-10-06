@@ -37,7 +37,7 @@ const Tracking = () => {
 
     //order confirmatiton
     const confirmOrder = (id) => {
-        alert(id)
+        //alert(id)
         let body = {
             status: "ok done"
         }
@@ -45,6 +45,7 @@ const Tracking = () => {
         axios.put(`/shoppingitem/${id}`, body)
         .then(res => {
             if(res){
+                alert('ok done')
                 window.location.reload();
             }
         })

@@ -56,8 +56,9 @@ const MyDelivary = () => {
         axios.put(`/deliveryitem/${id}`, body)
         .then(res => {
             if(res){
-                console.log(res)
-                //window.location.reload();
+                console.log(res);
+                alert('Delivered')
+                window.location.reload();
             }
         })
         .catch(err => {

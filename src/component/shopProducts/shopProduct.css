@@ -1,0 +1,198 @@
+.parentImg {
+    position: relative;
+    overflow: hidden;
+    height: 330px;
+}
+
+.childImg {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.cardX{
+    background: rgba(0, 0, 0, .2);
+    transition: .5s ease;
+}
+
+.cardX:hover{
+    background: rgba(0, 0, 0, .3);
+}
+
+.addbtn{
+    position: absolute;
+    bottom: 30px;
+    left: 55px;
+    background: white;
+    height: 23px;
+    width: 23px;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    transition: .5s ease;
+
+}
+.addbtn:hover{
+    background: rgba(0,0,0, .5);
+    color: white;
+}
+
+.noProduct{
+    border: 1px dotted gray;
+    padding: 50px;
+    text-align: center;
+    color: gray;
+}
+
+.cartbody{
+    width: 77%;
+}
+
+.cartY{
+    position: absolute;
+    right: 0;
+    width: 23%;
+}
+
+.cartbtnWrapper{
+    text-align: center; 
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    
+}
+
+.cartbtn{
+    text-decoration: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: #ec4653;
+    width: 100%;
+    color: white;
+    border: none;
+    transition: .5s ease;
+    display: none;
+}
+
+.cartbtn:hover{
+    background: #d1323f;
+    color: white;
+}
+
+.checkbtn{
+    text-decoration: none;
+    padding: 10px 100px;
+    background: #d1323f;
+    width: 100%;
+    color: white;
+    border: none;
+    transition: .5s ease;
+    
+}
+
+.checkbtn:hover{
+    background: #bf1b28 ;
+    color: white;
+}
+
+
+/* modal */
+
+
+/* The Modal (background) */
+.modalA {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 50px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-contentA {
+    background-color: #fefefe;
+    margin: auto;
+    
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+  }
+
+  .modal-contentA img{
+      width: 50%;
+      height: auto;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .populorProductDetails{
+      width: 77%;
+  }
+@media only screen and (max-width: 1050px) {
+    .cartY{
+        display: none;
+    }
+    .cartbody{
+        width: 100%;
+    }
+    .cartbtn{
+        display: block;
+    }
+    .populorProductDetails{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .parentImg {
+        width: 100%;
+        height: 250px;
+    }
+
+   
+    .modalA {
+        padding-top: 0; /* Location of the box */
+        }
+      /* Modal Content */
+      .modal-contentA {
+        background-color: #fefefe;
+        margin: auto;
+        
+        padding: 20px;
+        border: 1px solid #888;
+        width: 100%;
+        height: 100%;
+      }
+      .modal-contentA img{
+        width: 90%;
+        height: auto;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .parentImg {
+        width: 100%;
+        height: 200px;
+    }
+}

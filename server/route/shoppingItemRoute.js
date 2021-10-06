@@ -12,7 +12,8 @@ const {
     editshoppingItemStatus,
     deleteshoppingItem,
     getshoppingItemShopkeeper,
-    postDirect
+    postDirect,
+    postshoppingItemArray
 } = require('../controller/shoppingItemController');
 
 
@@ -23,7 +24,7 @@ route.post('/:selerId/:productId', checkLogin, postDirect);
 
 route.put('/:id',checkLogin, editshoppingItemStatus);
 
-
+route.patch('/arraypost', checkLogin, postshoppingItemArray);
 route.delete('/:id',checkLogin, deleteshoppingItem);
 
 

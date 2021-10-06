@@ -25,6 +25,11 @@ import OrderItem from "../shop/orderitem/OrderItem";
 import Register from "../register/Register";
 import DelivaryQueue from "../rider/delivary/DelivaryQueue";
 import MyDelivary from "../rider/delivary/myDekivary/MyDelivary";
+import NotFound from "../error/NotFound";
+import Allshop from "../allshop/Allshop";
+import ShopProducts from "../shopProducts/ShopProducts";
+import PopulorProducts from "../populorProducts/PopulorProducts";
+import FeatureProduct from "../populorProducts/FeatureProduct";
 
 const Nav = () => {
 	const [user, setuser] = useState({
@@ -251,6 +256,7 @@ const Nav = () => {
 					{" "}
 					<AddProduct userInfo={user} />{" "}
 				</Route>
+				
 			</>
 		);
 	}
@@ -432,11 +438,21 @@ const Nav = () => {
 								</NavLink>
 							</li>
 
+							<li>
+								<NavLink
+									activeClassName="active"
+									className="nav-link"
+									to="/allshop"
+								>
+									shop
+								</NavLink>
+							</li>
+
 							<li className="nav-item">
 								<a
 									activeClassName="active"
 									className="nav-link"
-									href="/products"
+									href="/populorProduct"
 								>
 									Products <span className="sr-only">(current)</span>
 								</a>
@@ -471,6 +487,14 @@ const Nav = () => {
 						{" "}
 						<Product user= {user} />{" "}
 					</Route>
+
+					<Route path='/allshop'> <Allshop/></Route>
+					<Route path='/shop/:id'> <ShopProducts/></Route>
+					<Route path='/populorProduct'> <PopulorProducts /> </Route>
+
+					<Route path='/featureProduct'> <FeatureProduct /> </Route>
+
+					
 
 					{route}
 				</Switch>

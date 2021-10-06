@@ -12,7 +12,7 @@ const getSeller = async (req, res) => {
             { role: 'seller' },
             { role: 'admin' },
           ]}, 
-        {email: 0, phone:0 , password: 0, name:0, vehicle: 0 , avater:0, role: 0, createdAt:0, updatedAt:0,__v:0})
+        {email: 0, phone:0 , password: 0, name:0, vehicle: 0 ,  role: 0, createdAt:0, updatedAt:0,__v:0})
         .populate({path: "products"});
 
         if(seller){
@@ -35,6 +35,28 @@ const getSeller = async (req, res) => {
 const getUser = async (req, res) => {
     try{
         const users = await people.find({})
+        if(users){
+            res.json({
+                users,
+            });
+        } else{
+            res.status(404).json({
+                errors: {
+                    msg: 'not available',
+                }
+            })
+        }
+
+    } catch(err){
+        console.log(err.message);
+    }
+}
+
+
+const getUserById = async (req, res) => {
+    try{
+        const users = await people.findOne({_id: req.params.id}, {email: 0, phone:0 , password: 0, name:0, vehicle: 0 ,  role: 0, createdAt:0, updatedAt:0,__v:0})
+        .populate({path: "products"});
         if(users){
             res.json({
                 users,
@@ -158,5 +180,6 @@ module.exports = {
     postUser,
     editUser,
     deleteUser,
-    getSeller
+    getSeller,
+    getUserById
 }

@@ -77,6 +77,39 @@ const postshoppingItem = async (req, res) => {
     }
 }
 
+const postshoppingItemArray = (req, res) => {
+   
+        let array = req.body.cart;
+        array.forEach(async (e) => {
+            //console.log(e._id)
+        
+
+            try{
+                const response = await cartModel.findByIdAndDelete({_id: e._id})
+                .select({_id: 0})
+                //console.log(response)
+
+                const shoppingItem = new shoopingItemModel({
+                    user: response.user,
+                    products: response.products,
+                    quantity: response.quantity,
+                    totalPrice: response.totalPrice,
+                    selerId: response.selerId,
+                })
+                const items = shoppingItem.save();
+                res.json({
+                    items,
+                });
+            }catch(err){
+                console.log(err.message)
+            }
+        
+
+        });
+
+    
+}
+
 const postDirect = async (req, res) => {
     //console.log(req.params.selerId);
     try{
@@ -191,5 +224,6 @@ module.exports = {
     editshoppingItemStatus,
     deleteshoppingItem,
     getshoppingItemShopkeeper,
-    postDirect
+    postDirect,
+    postshoppingItemArray
 }

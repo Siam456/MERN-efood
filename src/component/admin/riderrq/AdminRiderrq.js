@@ -40,7 +40,10 @@ const AdminRiderrq = () => {
         
         
         axios.post('/user/rq', data)
-        .then(res => alert('siam'))
+        .then(res => {
+            alert('added successfully');
+            window.location.reload();
+        })
         .catch(err => console.log(err.message))
     }
 
@@ -48,8 +51,9 @@ const AdminRiderrq = () => {
     const cancelRq = (id) => {
         axios.delete(`/riderrq/${id}`)
         .then(res => {
-            alert('delete successfullu');
+            alert('delete successfully');
             closeModal();
+            window.location.reload();
         })
         .catch(err => console.log(err))
     }
